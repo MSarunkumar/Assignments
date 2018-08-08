@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  var result;
+$(document).ready(function(){
+    //$("p").click(function(){
+      //  $(this).hide();
+    //});
+    $("#submit").click(function() {
+
+  var firstname   =  $("#fname").val();
+  var lastname    =  $("#lname").val();
+  var email       =  $("#email").val();
+  var password    =  $("#password").val();
+  var cpassword   =  $("#cpassword").val();
+  var mobile1     =  $("#mob1").val();
+  var mobile2     =  $("#mob2").val();
+  var address1    =  $("#addr1").val();
+  var address2    =  $("#addr2").val();
+  var City        =  $('#city').val();
+  var state       =  $('#stt');
+  var country     =  $('#ctt');
+  
+
+    if (firstname=='' ||lastname=='') 
+          {alert("!!!...   Please fill firstname and lastname both  ...!!!"); return false;}
+         if(email=='')
+            {alert("!!!...   Please fill email  ...!!!"); return false;}
+
+            if (email.indexOf("@")<1 || email.lastIndexOf(".")<email.indexOf("@")+2 || email.lastIndexOf(".")+2>=email.length) {
+                             alert(" !!!... Formate is not currect of email  ...!!!");
+                                return false;}
+                   
+    //................................................................................................... password
+        if(password.length < 8)
+              {
+                alert("!!!...  Password Lenght should be minimum 8 characters  ...!!!");  return false;
+              }
+            
+        if(password != cpassword)
+              {
+                alert("!!!...  The Confirm-Password did not match  ...!!!"); return false;
+              }
+     //...................................................................................................gender
+            if($('input[name=gender]:checked').length<=0)
+                 {
+                             alert("!!!...   Choose the Gender  ...!!!");return false;
+                            }
+          
+    //...........................................................................................mobile1
+                   if(mobile1==''){
+                         alert("!!!...   Please enter the Contact number 1   ...!!!");
+                            return false;
+                             }
+                         
+                    if(mobile1.length!=10)
+                        {
+                           alert("!!!...   Enter only 10 digits in mob 1  ...!!!"); return false;
+                        }
+                    
+
+                     if(isNaN(mobile1))
+                      {   alert("!!!...   Please enter only digits in mob 1  ...!!!"); return false;
+                         }
+ //...............................................................................................mobile2 
+                    if(mobile2!=''){
+                           if(mobile2.length!=10 )
+                           {
+                           alert("!!!...   Enter only 10 digits in mobile 2  ...!!!");  return false;
+                               }
+
+                            if( isNaN(mobile2))
+                             {   alert("!!!...   Please enter only digits in mobile 2 ...!!!"); return false;
+                                   }
+                       }
+
+                    
+
+      //............................................................................................... address 1
+                  if(address1 == "")
+                       {
+                        alert("!!!... You have to enter address 1  - can`t vacant... ok"); return false;
+                       }
+ //............................................................................................................city
+                      if(City == "")
+                       {
+                        alert("!!!... You have to enter city  - can`t vacant... ok"); return false;
+                       }
+
+  //............................................................................................................ state         
+       
+                  if(state.val()=='choose one')
+                  {
+                   alert("!!!...  Choose an state   . ok"); return false;
+                       
+                  }
+   //................................................................................................................ country
+                 if(country.val()=='choose one')
+                  {
+                   alert("!!!...  Choose a country   ...ok"); return false;
+                       
+                  }
+             
+//........................................................................................................   subscribe news
+                 if($('input[name=subscribe]:checked').length<=0)
+                 {
+                             alert("!!!...   Do you want to subscribe new  or not ...!!!");return false;
+                            }
+             
+                  
+                   
+
+
+                  if($("#result").val()=='')
+                  {
+                   alert("!!!...   Are you robot ?. Please Enter captch   ...!!!");return false; 
+                  }
+                  if($("#result").val()!=result)
+                  {
+                    alert("!!!...   Are you robot? Please Enter currect captch   ...!!!");return false; 
+                  }
+
+                  else {
+                    alert("!!!   Congratssss   !!!  Your form is going to submit      ...@@@");
+                     return ture;
+                  }
+
+    });
+    
+});
+
+function refresh()
+  {
+               var numberOne = parseInt(Math.floor(Math.random() * 10));
+               var numberTwo = parseInt(Math.floor(Math.random() * 10));
+               var  operands = parseInt(Math.floor(Math.random() * 10)%4);
+               var arr=['-','+','*','/'];
+               var op=  arr[operands];
+
+                $("#num1").html(numberOne);
+                $("#num2").html(numberTwo);
+                $("#operand").html(arr[operands]); 
+                 result=Math.floor(calc(numberOne,numberTwo,op));
+                
+      }
+ 
+function calc(firstnumber,lastnumber,opration){
+            var result1;
+            firstnumber = parseInt(firstnumber);
+            lastnumber = parseInt(lastnumber);
+         
+switch(opration) {
+    
+    case "-":
+          result1 = firstnumber - lastnumber;
+          break;
+    case "+":
+          result1 = firstnumber + lastnumber;
+          break;
+    case "*":
+          result1 = firstnumber * lastnumber;
+          break;
+    case "/":
+          result1 = firstnumber / lastnumber;
+          break;  
+    default:
+          result1= "!!! Error in operand   !!!";
+          break;
+       }
+
+    return(result1);
+   }
+
+
+
+
+</script>
+</head>
+<body style=" background-image: url(4k-wallpaper-beautiful-bloom-1266302.jpg)" onload="refresh()">
+
+              <h2 style= "margin-left:580px; color:blue;">Registration Form</h2>
+  
+
+        <form action="#" onsubmit = "return formValidation()">
+          
+              <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>First Name</div>
+                   <input type='text'  id='fname' class="required" >  <span  style='color:red' >* </span>  <br><br>
+         
+        <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>Last Name</div>
+           <input type='text' id="lname" class="required">  <span  style='color:red'>*  </span> <br><br>
+ 
+         <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>Email</div>
+            <input type='text' id="email" placeholder='abc@mindfiresolutions.com'  class="required">  <span  style='color:red'  class="sp">* </span>  <br><br>
+ 
+        <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>Password</div>
+            <input type='Password' id="password" placeholder='8 character' class="required">
+             <span  style='color:red' >* </span> <br><br>
+         
+         
+             <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>Confirm-Password</div>
+            <input type='Password' id="cpassword" placeholder='8 character' class="required"><span  style='color:red'  >* </span> <br><br>
+         
+ 
+              <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>Gender</div>
+                      <span style='color:green'>             <input type='radio' name='gender' value='0'>Male
+                                                             <input type='radio' name='gender' value='1' >Female
+                                                             <input type='radio' name='gender' value='2'>Trancegender  
+
+                                                 </span>  <br><br>
+ 
+        <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>Phone Number 1</div>
+              <input type='text' id="mob1" class="required">  <span  style='color:red'  class="sp">*        <br><br>
+          
+                <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>Phone Number 2</div>
+             <input type='text' id="mob2" ><br><br>
+         
+             <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>Address 1</div>
+             <input type='text' id="addr1" class="required" >
+                   <span  style='color:red'  >* </span>  <br><br>
+          
+           <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>Address 2</div>
+            <input type='text' id="addr2" name='address' ><br><br>
+ 
+           
+            <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>City</div>
+              <input type='text' id="city" class="required" >
+                 <span  style='color:red'  class="sp">*   </span>  <br><br>
+ 
+ 
+          <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>State</div>
+         <select  name='dropbox' id="stt" required>
+          <option > choose one</option>
+                    <option value='ud' >udisha</option>
+                    <option value='up' >up</option>
+                    <option value='mp' >mp</option>a
+                    <option value='te' >Telengana</option>
+                    <option value='ot' >others</option>
+            </select>
+          <span  style='color:red'  class="sp">* </span> <br><br>
+ 
+       <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>Country</div>
+        <select  name='dropbox' id="ctt" required>
+                 <option> choose one </option>
+                 <option value='in' >india</option>
+                 <option value='am' >americaan</option>
+                 <option value='ch' >chine</option>
+                 <option value='ot' >others</option>
+         </select>
+             <span  style='color:red' >* </span> <br><br>
+ 
+ 
+           <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>Subscribe News</div>
+                <span style='color:green'>   <input type='radio' name="subscribe">Yes
+                                             <input type='radio' name="subscribe">No
+
+                 <br><br>
+                 <div style='margin-left:500px;width:180px;float:left;color:green;font-style: italic;'>I am Not robot.</div>
+                  
+                  
+               
+                   <div style='margin-left:700px;width:180px;float:left;color:green;font-style: italic;'>
+                                  <i id='num1'>  </i>
+                                  <i id='operand'>  </i>
+                                  <i id='num2'>  </i>
+                                  =  <input type="text" id="result">
+                            <button onclick="refresh()" id="refreshbtn" style="color:orange">Refresh </button>
+                           
+                                   </div>
+                <br><br>
+              <div style="margin-left:600px;">
+                <button type='reset' value='reset' >Reset</button>
+               <button style="margin-left:100px; " type='submit' id="submit" value='submit'>submit</button>  <p style="color:red;margin-left:300px"> * [Mandatory] </p> </div>
+                
+         </div>
+      </form>
+
+  
+
+
+</body>
+</html>
