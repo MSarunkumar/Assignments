@@ -1,202 +1,171 @@
 <!doctype html>
 <html>
+ <head>  </head>
 
-  <head>
 
+<body>
  
+ <header> <center><font size=6>  User Registration Form </font></center> 
+                  </header>
 
-  </head>
 
-  <body>
-
+  
   <form  name="User_Registration" >
 
-<table cellpadding="5" width="40%"  align="center" cellspacing="5">
+               <table cellpadding="5" width="40%"  align="center" cellspacing="5">
 
 
-<tr>
-  <td colspan=2>
-  <center><font size=6><b>User Registration Form</b></font></center>
-  </td>
-</tr>
+            <tr>
+                       <td>First Name</td>
+	                     <td><input type=text name=textnames id="textname" size="30"></td>
+                  </tr>
 
-<tr>
-     <td>First Name</td>
-	 <td><input type=text name=textnames id="textname" size="30"></td>
-     </tr>
-<tr>
+            <tr>
+                        <td>Middle Name</td>
+	                      <td><input type=text name=textnames id="textname" size="30"></td>
+                  </tr>
 
-<tr>
-     <td>Middle Name</td>
-	 <td><input type=text name=textnames id="textname" size="30"></td>
-     </tr>
-<tr>
+             <tr>
+                         <td>Last Name</td>
+	                       <td><input type=text name=textnames id="textname" size="30"></td>
+                   </tr>
 
-<tr>
-     <td>Last Name</td>
-	 <td><input type=text name=textnames id="textname" size="30"></td>
-     </tr>
-<tr>
 
-<tr>
-   <td>Current Address</td>
-    <td><input type="textfield" name="personaladdress" id="personaladdress" size="30"></td>
-</tr>
+            <tr>
+                    <td>Current Address</td>
+
+                    <td><textarea name="CurrentA"></textarea></td>
+               </tr>
  
  
- <tr>
-    <td>Postal Address</td>
-    <td><input type="textfield" name="paddress" id="paddress" size="30"></td>
-  </tr> 
+            <tr>
+                      <td>Postal Address</td>
+                      <td><textarea name="PostalA"> </textarea></td>
+                 </tr> 
   
-<tr>
-     <td>Sex</td>
-     <td><input type="radio" name="sex" value="male" size="10">Male
-     <input type="radio" name="sex" value="Female" size="10">Female
-	 <input type="radio" name="sex" value="Female" size="10">Transgender
-	 </td>
-</tr>
+             <tr> 
+                       <td>Sex</td>
+                       <td><input type="radio" name="sex" value="male" >Male
+                       <input type="radio" name="sex" value="Female" >Female
+	                     <input type="radio" name="sex" value="Female" >Transgender </td>
+                 </tr>
 
-</tr>
+            <tr> 
+                        <td>DOB</td>
+                        <td><input type="date" name="dob" id="dob"  ></td>
 
-<tr>
+                  </tr>
 
-  <td>DOB</td>
+
+
+
+          <tr> 
+                   <td>EmailId</td>
+                   <td><input type="text" name="emailid" id="emailid" size="30"  placeholder="abcd@mindfiresolutions.com"></td>
+
+             </tr>
   
-  <td><input type="date" name="dob" id="dob" size="30"  ></td>
-
-  </tr>
-
-
-
-
-  <tr>
-
-  <td>EmailId</td>
-
-  <td><input type="text" name="emailid" id="emailid" size="30"  placeholder="abcd@mindfiresolutions.com"></td>
-
-  </tr>
+         <tr>
+                          <td>Password </td>
+                         <td>  <input type="password" id="password" name="password"
+                                          placeholder="8 characters minimum" size="30" /></td>
   
-  <tr>
-     <td>Password </td>
-      <td>  <input type="password" id="password" name="password" size="30"
-              
-               placeholder="8 characters minimum" /></td>
+                </tr>
   
-  </tr>
-  
-  
-<tr>
-  <td>MobileNo</td>
-  <td><input type="text" name="mobileno" id="mobileno" size="30"></td>
-   </tr>
+          <tr>
+                           <td>MobileNo</td>
+                            <td><input type="text" name="mobileno" id="mobileno" size="30"></td>
+                  </tr>
 
-   <tr>
-  <td>Alternative MobileNo</td>
-  <td><input type="text" name="mobileno2" id="mobileno2" size="30"></td>
-   </tr>
+         <tr>
+                          <td>Alternative MobileNo</td>
+                            <td><input type="text" name="mobileno2" id="mobileno2" size="30"></td>
+                 </tr>
    
   
-  
-  <tr>
+        <tr>   
+                        <td>Interests</td>
+                           <td><select name="INTERESTS">
 
-  <td>Interests</td>
+                                                 <option value="-1" selected>select...</option>
+                                                 <option value="sp">sports</option>
+                                                 <option value="bo">books</option>
+                                                  <option value="com">computer </option>
+                                                  <option value="so">software</option>
+                                                  <option value="Goa">fashion</option>
+                                                  <option value="Ph">photography</option>
+	                                                <option value="ot">others</option>
+                                         </select>
+                                       </td>
 
-  <td><select name="INTERESTS">
-
-    <option value="-1" selected>select...</option>
-    <option value="sp">sports</option>
-    <option value="bo">books</option>
-    <option value="com">computer </option>
-    <option value="so">software</option>
-    <option value="Goa">fashion</option>
-    <option value="Ph">photography</option>
-	 <option value="ot">others</option>
- </select>
- </td>
-
-</tr>  
+                    </tr>  
   
   
 
-<tr>
+            <tr>
+                                    <td>City</td>
 
-  <td>City</td>
+                                      <td><select name="City">
 
-  <td><select name="City">
+                                                  <option value="-1" selected>select...</option>
+                                                   <option value="New Delhi">BHUBANESWAR</option>
+                                                   <option value="New Delhi">NOIDA</option>
+                                                   <option value="New Delhi">NEW DELHI</option>
+                                                   <option value="Mumbai">MUMBAI</option>
+                                                    <option value="Goa">GOA</option>
+                                                   <option value="Patna">PATNA</option>
+	                                                 <option value="ot">others</option>
+                                          </select></td>
 
-    <option value="-1" selected>select...</option>
-    <option value="New Delhi">BHUBANESWAR</option>
-    <option value="New Delhi">NOIDA</option>
-    <option value="New Delhi">NEW DELHI</option>
-    <option value="Mumbai">MUMBAI</option>
-    <option value="Goa">GOA</option>
-    <option value="Patna">PATNA</option>
-	<option value="ot">others</option>
- </select></td>
-
-</tr>
-
+                                   </tr>
 
 
+                        <tr>
+                                     <td>District</td>
+
+                                           <td><select name="District">
+
+                                                  <option value="-1" selected>select..</option>
+                                                  <option value="ET">ETAH</option>
+                                                  <option value="WR">WARANGAL</option>
+                                                  <option value="AGR">AGRA</option>
+                                                  <option value="PT">PATNA</option>
+                                                  <option value="ot">others</option>
+
+                                                 </select></td>
+                                  </tr>
+
+
+                        <tr>
+
+                                                   <td>State</td>
+                                                  <td><select Name="State">
+
+                                                     <option value="-1" selected>select..</option>
+                                                     <option value="UP">UP</option>
+                                                     <option value="UDISA">UDISA</option>
+                                                      <option value="New Delhi">NEW DELHI</option>
+                                                     <option value="Mumbai">MUMBAI</option>
+                                                     <option value="Goa">GOA</option>
+                                                     <option value="ot">others</option>
  
+                                           </select></td>
+                                      </tr>
+
+                                <tr>
+
+                                                  <td>ZipCode</td>
+                                                  <td><input type="text" name="pincode" id="pincode" size="30"></td>
 
 
-<tr>
+                                <tr>
+                                            <td colspan="3"><input type="submit" value="Submit User Registration Form" /></td>
 
-  <td>District</td>
+                                      </tr>
 
-  <td><select name="District">
+                </table>
 
-  <option value="-1" selected>select..</option>
-  <option value="ET">ETAH</option>
-  <option value="WR">WARANGAL</option>
-  <option value="AGR">AGRA</option>
-  <option value="PT">PATNA</option>
-  <option value="ot">others</option>
-
-  </select></td>
-
-
-</tr>
-
-
-<tr>
-
-  <td>State</td>
-
-  <td><select Name="State">
-
-  <option value="-1" selected>select..</option>
-  <option value="UP">UP</option>
-   <option value="UDISA">UDISA</option>
-  <option value="New Delhi">NEW DELHI</option>
-  <option value="Mumbai">MUMBAI</option>
-  <option value="Goa">GOA</option>
-<option value="ot">others</option>
- 
-
-  </select></td>
-
-  </tr>
-
-  <tr>
-
-  <td>ZipCode</td>
-
-  <td><input type="text" name="pincode" id="pincode" size="30"></td>
-
-
-<tr>
-   <td colspan="3"><input type="submit" value="Submit User Registration Form" /></td>
-
-  </tr>
-
-  </table>
-
-  </form>
-
-  </body>
-
-  </html>
+            </form>
+        <footer>This is Footer.   Copy rights  E=MC<sup>2</sup></footer>
+     </body>
+</html>
