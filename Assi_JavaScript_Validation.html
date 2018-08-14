@@ -12,33 +12,33 @@
    <!--   We used refresh function for refreshing the capcha.The onload evend use for first load the doc show the captcha.
    
     -->
-<body style=" background-image: url(4k-wallpaper-beautiful-bloom-1266302.jpg)" onload="refresh();">
+<body style=" background-image: url(4k-wallpaper-beautiful-bloom-1266302.jpg)" onload="refresh()">
         
  <header>Registration Form </header>
 
-                 <br><br>
+                
   
    <!--  When client submit the form then formValidation() will call and return boolean value based on return value form would be submit 
    -->
-
+     <br><br>
  
   <form action="#" onsubmit = "return formValidation()">
            
         <div class="Position_color">First Name</div>
-             <input type='text' id='fname'> <span   class='star'> </span>  <br><br>
+             <input type='text' id='fname' onblur="firstNameValid()"> <span class='star' id='fid'> </span>  <br><br>
          
         <div class="Position_color">Last Name</div>
-             <input type='text' id="lname" class="required">  <span class='star'>  </span> <br><br>
+             <input type='text' id="lname" class="required" onblur="lastNameValid()">  <span class='star' id="lid">  </span> <br><br>
    
         <div class="Position_color">Email</div>
-            <input type='text' id="email" placeholder='abc@mindfiresolutions.com'> <span  class='star'> </span>  <br><br>
+            <input type='text' id="email" placeholder='abc@mindfiresolutions.com' onblur="emailValid()"> <span  class='star' id='eid'> </span>  <br><br>
  
         <div class="Position_color">Password</div>
-            <input type='Password' id="password" placeholder='8 character'> <span  class='star'> </span> <br><br>
+            <input type='Password' id="password" placeholder='Minimum 8 character' onblur="passwordValid()"> <span  class='star' id='pid'> </span> <br><br>
          
          
         <div class="Position_color">Confirm-Password</div>
-            <input type='Password' id="cpassword" placeholder='Minnimum 8 character'><span class='star'></span><br><br>
+            <input type='Password' id="cpassword" placeholder='Minimum 8 character' onblur="passwordValid()"><span class='star' id="cpid"></span><br><br>
          
  
         <div class="Position_color">Gender</div>
@@ -49,16 +49,16 @@
                                                              </span>  <br><br>
  
         <div class="Position_color">Phone Number 1</div>
-              <input type='text' id="mob1" class="required">  <span  class='star'> <br><br>
+              <input type='text' id="mob1"  onblur="mobile1Valid()">  <span  class='star' id='mid1'> </span> <br><br>
           
         <div class="Position_color">Phone Number 2</div>
-              <input type='text' id="mob2" name='address'><br><br>
+              <input type='text' id="mob2"  onblur="mobile2Valid()"> <span id='mid2'> </span> <br><br>
          
         <div class="Position_color">Address 1</div>
-              <input type='text' id="addr1" class="required" > <span  class='star'> </span>  <br><br>
+              <input type='text' id="addr1"  > <span  class='star'> </span>  <br><br>
           
         <div class="Position_color">Address 2</div>
-              <input type='text' id="addr2" name='address' ><br><br>
+              <input type='text' id="addr2"  ><br><br>
  
         <div class="Position_color">City</div>
               <input type='text' id="city" > <span  class='star'>   </span>  <br><br>
@@ -107,5 +107,5 @@
         </form>   
 
     </body>
-    <footer>This is footer of the page </footer>
+    <footer>This is footer. [About us, copy right etc.. area] </footer>
 </html>
