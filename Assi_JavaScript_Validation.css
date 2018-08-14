@@ -1,13 +1,17 @@
 
 
 
-#body{
 
-	   background-color:#faffab;
-
-   }
 
 header{
+ 
+    background-color: #666;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+}
+footer{
  
     background-color: #666;
     padding: 10px;
@@ -22,11 +26,12 @@ header{
 
 .Position_color{
  
- margin-left:500px;
+margin-left:500px;
 width:180px;
 float:left;
 color:green;
 font-style: italic;
+font-size:22px
 
 }
 
