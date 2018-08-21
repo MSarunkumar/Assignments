@@ -1,31 +1,107 @@
-     var result;
-	  var Valid=false;
-	  var password='';
-    /*   function formValidation() 
+          var result;
+	      var Valid=false;
+	      var password='';
+	      var flag_Password=0;
+		  var f_Valid=false;
+		  var l_Valid=false;
+		  var e_Valid=false;
+		  var p_Valid=false;
+		  var cp_Valid=false;
+		  var m1_Valid=false;
+		  var m2_Valid=true;
+		  var a1_Valid=false;
+		  var a2_Valid=true;
+		  var c_Valid=false;
+		  var ca_Valid=false;
+		  
+		  
+		  
+		  
+		  
+    function formValidation() 
          {
-              
-                  var firstname     =document.getElementById("fname");
-                  var lastname      =document.getElementById('lname');
-                  var email         =document.getElementById("email").value;
-                  var password      =document.getElementById('password');
-                  var cpassword     =document.getElementById('cpassword');
                   var genders       =document.getElementsByName("gender");
-                  var mobile1       =document.getElementById('mob1');
-                  var mobile2       =document.getElementById('mob2');
-                  var address1      =document.getElementById("addr1");
-                  var address2      =document.getElementById("addr2");
-                  var City1         =document.getElementById("city");
-                  var state         =document.getElementById("selects");
-                  var country       =document.getElementById('selectc');
+                  var state         =document.getElementById("stt");
+                  var country       =document.getElementById('ctt');
                   var subscribes    =document.getElementsByName('subscribe');
-				  if(Valid==true) return true;
-				  else            return false;
 				  
-		 } 
+				  
+		            if(f_Valid==false)
+					  {
+					     ShowError("fid",' Please Fix the your first name.   ');
+						 return false;}
+                     else if(l_Valid== false)
+					   {
+                        ShowError("lid",' Please Fix the your last name.   ');
+				      	 return false;	}
+
+                      else if(e_Valid==false)
+					     { ShowError("eid" ," Please Fix the your Email ");
+                                return false;
+					        }
+				      else if(p_Valid==false)
+					     { ShowError("pid" ," Please Fix the your Password ");
+                                return false;
+					        }
+				      else if(cp_Valid==false)
+					   { ShowError("cpid" ," Please Fix the your confirm-password ");
+                                return false;
+					        }
+					 else if (!(genders[0].checked || genders[1].checked|| genders[2].checked) ) {
+                        ShowError("gid"," Please select gender  ");
+				           return false;
+                         }
+                      else if(m1_Valid==false)
+					   { ShowError("mid1" ," Please Fix the your phone 1 ");
+                                return false;
+					        }					
+                      else if(m2_Valid==false)
+					   { ShowError("mid2" ," Please Fix the your phone 2 ");
+                                return false;
+					        }
+                      else if(a1_Valid==false)
+					     { ShowError("aid1" ," Please Fix the your address 1 ");
+                                return false;
+					        }
+                      else if(a2_Valid==false)
+					     { ShowError("aid2" ," Please Fix the your address 2");
+                                return false;
+					        }									
+                      else if(c_Valid==false)
+					      { ShowError("cid" ," Please Fix the your city");
+                                return false;
+					        } 
+					 else if (state.options[state.selectedIndex].text=='Choose One')
+					     {
+						 ShowError("stid" ," Please select the your state");
+						 return false;}
+						
+						 
+				     else if (country.options[country.selectedIndex].text=='Choose One')
+					     {
+						 ShowError("coid" ," Please select the your country");
+						 return false;} 
+						 
+					     
+						 else if ( (subscribes[0].checked==false && subscribes[1].checked==false) ) {
+                             ShowError("sid"," Do you want to subscribe or not  ");
+                            return false; 
+                             }
+					else if(ca_Valid==false)
+					     { ShowError("captcha_id" ," Please Fix the your captcha");
+                                return false;
+					        }
+					
+					else 
+					{
+						confirm(" Form is going to submit ..Okay ");
+						   return true;
+					}
+        } 
                    
-//...................................................           first name Validation 
+//...................................................                                     first name Validation 
      
-	 /*   function firstNameValid()
+	   function firstNameValid()
             {
 				
 			       var firstname=document.getElementById("fname").value;
@@ -34,42 +110,41 @@
 			     if(firstname =="")
                   {  
                          ShowError("fid",' Please Enter the your first name.   ');
-                         Valid=false;
+                         f_Valid=false;
                     }
 					
 				 else if(firstname.trim()=='')
 				   { 
 				         ShowError("fid", '  Please Don`t Enter spaces.    ');	
-				         Valid=false;
+				         f_Valid=false;
 				   }
 				
 				 else if((/[0-9]/.exec(firstname))!=null ){
                          ShowError("fid", 'Please Don`t Enter digit in first name.   ');	   
-                         Valid=false;				 			
+                         f_Valid=false;				 			
 				    }
 			     else if((firstname).match(reg)!=null ){
                          ShowError("fid" ,'     Please Don`t Enter special character in first name.    ');	   
-                         Valid=false;				 			
+                         f_Valid=false;				 			
 				    }
-				 else if(firstname.length<3 || firstname.value.length>25){
+				 else if(firstname.length <2 || firstname.length>25){
 					     ShowError("fid" ,'  Please Enter your first name in [2-25] lenght ');
-				         Valid=false;
+				         f_Valid=false;
 					 }
 				 else if(getSpace(firstname)> 0)
 				 {
 					     ShowError("fid" ,'  Please Don`t Enter any spaces in First name  ');
-				         Valid=false;
+				         f_Valid=false;
 				     }
 				 else{
 					  document.getElementById("fid").innerHTML='';
-				          Valid=true;
+				          f_Valid=true;
 						  }
 				
 			}
-			
-//...................................................           last name Validation 
+//...................................................                                      last name Validation 
       
-	  function lastNameValid()
+	      function lastNameValid()
             { 
 			      var lastname=document.getElementById("lname");
 			      var reg=(/[@|#|!|$|%|^|*|(|)|-|=|_|&|.|<|>|?|:|;|'|"]/g);
@@ -77,178 +152,200 @@
 			     if(lastname.value =="")
                   {  
                          ShowError("lid",' Please Enter the your last name.   ');
-                         Valid=false;
+                         l_Valid=false;
                     }
 					
 				 else if(lastname.value.trim()=='')
 				   { 
 				         ShowError("lid", '  Please Don`t Enter spaces in last name    ');	
-				         Valid=false;
+				         l_Valid=false;
 				   }
 				
 				 else if((/[0-9]/.exec(lastname.value))!=null ){
                          ShowError("lid", 'Please Don`t Enter digit in last name.   ');	   
-                         Valid=false;				 			
+                         l_Valid=false;				 			
 				    }
 			     else if((lastname.value).match(reg)!=null ){
                          ShowError("lid" ,'     Please Don`t Enter special character in last name.    ');	   
-                         Valid=false;				 			
+                         l_Valid=false;				 			
 				    }
 				 else if(lastname.value.length<3 || lastname.value.length>25){
 					     ShowError("lid" ,'  Please Enter your last name in [2-25] length ');
-				         Valid=false;
+				         l_Valid=false;
 					 }
 				 else if(getSpace(lastname.value)>0)
 				 {
 					     ShowError("lid" ,'  Please Don`t Enter any spaces in last name  ');
-				         Valid=false;
+				         l_Valid=false;
 				     }
 				 else{
 					  document.getElementById("lid").innerHTML='';
-				          Valid=true;}
+				          l_Valid=true;}
 				
 				
 			}   
-//......................................................................................Email Validation 
-      function emailValid()
-	  {
+//............................................................                             Email Validation 
+          function emailValid()
+	       {
 		  
 		       var email =document.getElementById("email").value;
 		      // var reg=/[a-z0-9A-Z]/g/;
-		       var regcopy=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-               
+		       //var regcopy=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                var filter = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
+
+                      
+
+       
 			   if(email == ""){
                   ShowError("eid" ," Please Enter the your Email ");
-                    Valid=false;
+                    e_Valid=false;
                     }
 
                 else if(getSpace(email)>0) {
 					ShowError("eid" ," Please Don`t Enter spaces in Email ");
-                    Valid=false;
+                    e_Valid=false;
 				}
 				 else if(email.length< 5 ) {
 					ShowError("eid" ," Please Enter some more charecter in Email ");
-                    Valid=false;
+                    e_Valid=false;
 				}
 				else if(email.length>50)
 				{
 					ShowError("eid" ," Please Enter less than 50  charecter in Email ");
-					 Valid=false;
+					 e_Valid=false;
 				 }
+				 else if (!filter.test(email))
+				 {
+					ShowError("eid" ," Please Enter Email in correct formate ");
+					 e_Valid=false;  
+				 }
+				 
+				 else 
+				 {
+					   document.getElementById("eid").innerHTML='';
+					 e_Valid=true;
+					 
+				 }
+				 
 				
 				
                      
-   }
-//...........................................................................        password Validation 
-  */function passwordValid()
-      {
+         }
+//...........................................................................              password Validation 
+          function passwordValid()
+             {
 	       password  =document.getElementById('password').value;
-		  //var reg=/[a-z0-9A-Z!@#$%^&*()_+=<>.,?;:'"]/g/;   
-			var regCopy=  /^[a-zA-Z0-9!@#$%^&*]{8,15}$/;  
+		 
+			var lowerCaseLetters=/[a-z]/g;
+			var upperCaseLetters =/[A-Z]/g;
+			var specialLetters=/[~!@#$%^&*()_+<>:"?;'/]/g;
+			var numberLetters=/[0-9]/g;
 			 
 			   if(password== '')
-			  {
+			    {
 				   ShowError("pid" , " Please Enter the password ");
-                   Valid= false;
-				}
+                   p_Valid= false;
+				   flag_Password=0;
+				  }
 			  else if(password.length < 8)
               {
                  ShowError("pid" , "Password Lenght should be minimum 8 characters ");
-                  Valid= false;
+                  p_Valid= false;
+				  flag_Password=0;
               }
 			   else if(password.length > 15)
-              {
+			   {
                  ShowError("pid" , "Password Lenght should be maximum 15 characters ");
-                  Valid= false;
+                  p_Valid= false;
+				  flag_Password=0;
               }
 			  
-			  else if(!(regCopy.test(password)))
+			  else if(!((password.match(lowerCaseLetters)) && (password.match(upperCaseLetters)) 
+				         && (password.match(numberLetters)) && (password.match(specialLetters)) ))
 			  {  
-		            ShowError("pid" , "Password must be contain 1 lowercase 1 uppercase 1 digit 1 special char");
-                    Valid= false;
+		            ShowError("pid" , "Password must be contain 1 lower 1 upper 1 digit 1 special letters");
+                    p_Valid= false;
+					flag_Password=0;
 				 }
 			   else 
 			   {
-				   document.getElementById("pid").innerHTML='';
-				          Valid=true;
+				          document.getElementById("pid").innerHTML='';
+				          p_Valid=true;
+						  flag_Password=1;
 						  }   
                
 	   }
-
-//.....................................................................  confirm - password 	   
-
-     /*   function cpasswordValid()
-         {
+//.....................................................................                     confirm - password 	   
+          function cpasswordValid()
+              {
            var cpassword =document.getElementById('cpassword').value;
-				  
+			if( flag_Password==1)
+			{
+				
 			if(password != cpassword)
               {
                  ShowError("cpid","  The Confirm-Password did not match  ");
-                 Valid=false;
-              } 
+                 cp_Valid=false;
+              }
+			  else 
+			  {
+			       document.getElementById("cpid").innerHTML='';
+				   cp_Valid=true;
+				   flag_Password=0; 
+			   }
+			}
+			else {
+			 
+			    ShowError("cpid"," Please First Enter currect Password than confirm-password ");
+				cp_Valid=false;
+			 }
+          			
               				 
 		 }
-			  
-			 
-	  
-			  
-			  
-			  
-			  
-  
-
-             
-  } 
-//...................................................................................... gender Validation
-    /* function genderValid(){           
-		   if (! (genders[0].checked || genders[1].checked|| genders[2].checked) ) {
-                  alert("!!!...   Select at least one gender   ...!!!");
-                  return false;
-               }
-	 }*/
-//.......................................................................................  mobile1 Validation
-  /*             function mobile1Valid()
+//.......................................................................................   mobile1 Validation
+          function mobile1Valid()
 			    {
-				    // alert('hii   la la la');
+				   
 					 
 					var mobile1 =document.getElementById('mob1').value;
-					//var reg=/   /;
 					
-					
-                    if(mobile1 === ""){
+			       if(mobile1 === ""){
                         ShowError("mid1"," Please enter the Contact number  ");
-                           Valid= false;
+                           m1_Valid= false;
                              }
-                         
-                     else if(mobile1.length != 10)
+                       else if(getSpace(mobile1)>0)
+                        {
+                           ShowError("mid1","  Please Don`t  Enter spaces"); 
+                            m1_Valid= false;
+                        }
+					 
+					 else if(isNaN(mobile1))
+                      {   ShowError("mid1","   Please enter only digits   ");
+                          m1_Valid=false;
+                         }
+                     
+					 else if(mobile1.length != 10)
                         {
                            ShowError("mid1","  Please  Enter 10 digits  "); 
-                            Valid= false;
+                            m1_Valid= false;
                         }
                     
+                    
 
-                     else if(isNaN(mobile1))
-                      {   ShowError("mid1","   Please enter only digits   ");
-                          Valid=false;
-                         }
-					 else if(mobile1=='0000000000')
+                    else if(mobile1=='0000000000')
 					 {
 						ShowError("mid1","   Please Enter Valid phone number    ");
-					    Valid=false;
+					    m1_Valid=false;
 					 }						
 					 else 
 					 {
 						  document.getElementById("mid1").innerHTML='';
-				          Valid=true;}
+				          m1_Valid=true;}
 						  
 						 
 				}   
-//.......................................................................................  mobile2 Validation
-           
-
-
-
-		     function mobile2Valid(){
+//.......................................................................................    mobile2 Validation
+          function mobile2Valid(){
 				  
 				   var mobile2   =document.getElementById('mob2').value;
 			
@@ -256,94 +353,151 @@
 				       {
                        
 					   if( isNaN(mobile2))
-                            {    ShowError("mid2" ,"   Please enter only digits in phone number  mobile 2 ");
-                              Valid=false;
+                            {    ShowError("mid2" ,"   Please enter only digits in phone number 2 ");
+                                 m2_Valid=false;
                              }
 					     
-                    
-
-                          else if(mobile2.length!=10)
-                         {
-                             ShowError("mid2", " Enter only 10 digits in Phone number 2 "); 
-                             Valid =false;
-                           }
-						    else if(mobile2=='0000000000')
-					            {
-						                ShowError("mid2","   Please Enter Valid phone number 2   ");
-					                   Valid=false;
+                         else if(mobile2.length!=10)
+                            {
+                                   ShowError("mid2", " Enter only 10 digits in Phone number 2 "); 
+                                    m2_Valid =false;
+                              }
+							   else if(getSpace(mobile2)>0)
+                                {
+                                 ShowError("mid2","  Please Don`t  Enter spaces"); 
+                                  m2_Valid= false;
+                                  }
+							  
+							     else if(mobile2=='0000000000')
+					                 {
+						                ShowError("mid2"," Please Enter Valid phone number 2   ");
+					                     m2_Valid=false;
 					                   }			
 					      else 
 					        {
 						      document.getElementById("mid2").innerHTML='';
-				              Valid=true;}
+				              m2_Valid=true;
+							  }
 	                    }
+						else m2_Valid=true;
 			  }             
-//............................................................................................................address 1
-                /*  function address1Valid(){
-				   if(address1.value== "")
+//............................................................................................   address 1
+          function address1Valid(){
+				   var address1   =document.getElementById("addr1").value;
+				   if(address1== "")
                        {
-                        alert("!!!... You have to enter address  - can`t vacant... ok");
-                        return false;
+                         ShowError("aid1","   Please Enter address 1   ");
+                          a1_Valid= false;
                        }
+					  else if(!(isNaN(address1)))
+                       {
+                         ShowError("aid1","   Please Enter Valid addresss 1   ");
+                         a1_Valid=false;
+                       }
+					    else if(getSpace(address1)>10)
+					   { 
+				         ShowError("aid1","   Please Remove Spaces  ");
+                         a1_Valid=false; 
+					   }
+					   else 
+					   {
+						document.getElementById("aid1").innerHTML='';
+				              a1_Valid=true;   
+					   }
 				  }
 //............................................................................................................address 2
-                   function address2Valid(){                     
-					 if(isNaN(address2.value))
+          function address2Valid(){   
+			       
+                  var address2     =document.getElementById("addr2").value;
+                     if(address2!=''){
+					 if(!(isNaN(address2)))
                        {
-                        alert("!!!...  address 2 can`t be only digit  -  ok");
-                        return false;
+                         ShowError("aid2","   Please Enter Valid addresss 2   ");
+                         a2_Valid=false;
                        }
+					   else if(getSpace(address2)>10)
+					   { 
+				         ShowError("aid2","   Please Remove Spaces  ");
+                         a2_Valid=false; 
+					   }
+					   else
+					   {
+						 document.getElementById("aid2").innerHTML='';
+				              a2_Valid=true;   
+					   }  
+					   
+					 }
+					 else a2_Valid=true;
+					 
 				   }
 //............................................................................................................city
-                       function cityValid(){
-
-					 if(City1.value== "")
+          function cityValid(){
+				     var City1   =document.getElementById("city").value;
+                      if(City1== "")
                        {
-                        alert("!!!... You have to enter city  - can`t vacant... ok");
-                        return false;
+                          ShowError("cid","   Please Enter the City  ");
+                           c_Valid= false;
                        }
+					  else if(getSpace(City1)>0)
+					   { 
+				           ShowError("cid","   Please Remove Spaces  ");
+                            c_Valid=false; 
 					   }
+					   if(!(isNaN(City1)))
+                       {
+                         ShowError("cid","   Please Enter Valid City   ");
+                         c_Valid=false;
+                       }
+					   else 
+					   {
+						  document.getElementById("cid").innerHTML=''; 
+                              c_Valid=true;						  
+					   }
+					}
 //............................................................................................................state 
 //.............................................................................................................country
-//........................................................................................subscribe New
-                    
-                      if ( (subscribes[0].checked==false && subscribes[1].checked==false) ) {
-                              alert("!!!... Do you want to subscribe or not ?  check one ...!!!");
-                           return false;
-                       }
-//.......................................................................................................................capcha
-
-           if(result == document.getElementById("result").value) {
-                  alert("!!!   you are not  robot, so Form is going to submit.....ok   !!!");
-                    return  true;
-                 } 
-
-
-           if(document.getElementById("result").value=='')
-              {
-                 alert("!!!... Enter the result of captcha value  ...!!!");
-                 return false ;
-                }
-                  
-             if(result != document.getElementById("result").value)
-               {
-                  
-                 alert("@@@    you are robot. pakade gye    @@@");
-                 return false;
-                 }
-             
-        
-
+//......................................................................................................... Captcha Validation
+	function captchaValid()
+		  {
+                var User_result=document.getElementById("User_result").value; 
+				if(User_result =='')
+				{
+					ShowError("captcha_id", ' Enter the result of captcha');
+					    ca_Valid=false;
+				  }
+                else if(result!='')
+				 {
+					 if(parseInt(User_result)!= parseInt(result))
+					 {
+						 ShowError("captcha_id",' You are robot');
+						 ca_Valid=false;
+					 }
+					 else
+					 {
+						document.getElementById("captcha_id").innerHTML='';
+				          ca_Valid=true;
+					     }
+				   }
+				 else{
+					  
+					ShowError("captcha_id",' Captcha Result not performe by DOM');
+					  ca_Valid=false;
+				        }
+				 
+			 }
 //...........   It is genrating two numbers, operand and calling  calc fuction get a actual result of captcha 
 		
-function refresh()
-  {
-               var numberOne = parseInt(Math.floor(Math.random() * 10));
-               var numberTwo = parseInt(Math.floor(Math.random() * 10));
+          function refresh()
+           {
+               var numberOne = parseInt(Math.floor(Math.random() * 100)%13);
+               var numberTwo = parseInt(Math.floor((Math.random()) * 100)%13);
                var  operands = parseInt(Math.floor(Math.random() * 10)%4);
                var arr=['-','+','*','/'];
                 var op=  arr[operands];
-
+                if(numberTwo==0 && op=='/')
+				{
+					op='+';
+				}
                document.getElementById("num1").innerHTML=numberOne;
                document.getElementById("num2").innerHTML=numberTwo;
                document.getElementById("operand").innerHTML=op;
@@ -353,50 +507,47 @@ function refresh()
       }
 	  
  //.......    It will performe calculation (two number and operands ) and return result.
- 
- 
-function calc(firstnumber,lastnumber,opration){
+          function calc(firstnumber,lastnumber,opration){
             var result1;
             firstnumber = parseInt(firstnumber);
             lastnumber = parseInt(lastnumber);
          
-switch(opration) {
+              switch(opration) {
     
-    case "-":
-          result1 = firstnumber - lastnumber;
-          break;
-    case "+":
-          result1 = firstnumber + lastnumber;
-          break;
-    case "*":
-          result1 = firstnumber * lastnumber;
-          break;
-    case "/":
-          result1 = firstnumber / lastnumber;
-          break;  
-    default:
-          result1= "No opration is enterd";
-          break;
-       }
+                              case "-":
+                                 result1 = firstnumber - lastnumber;
+                                 break;
+                              case "+":
+                                  result1 = firstnumber + lastnumber;
+                                     break;
+                              case "*":
+                                   result1 = firstnumber * lastnumber;
+                                     break;
+                              case "/":
+                                  result1 = firstnumber / lastnumber;
+                                         break;  
+                              default:
+                               result1= "No opration is enterd";
+                               break;
+                             }
 
-    return(result1);
-   }
-   */
+                           return(result1);
+                        }
    
-   //.......   It will return total no of spaces present in String 
-   function getSpace(str)
-   {
-	   var count=parseInt(0);
-	   for(var i=0;i< str.length;i=i+1)
-	   {
-		   if(str[i]==' ')
+   
+   //...........    It will return total no of spaces present in String 
+          function getSpace(str)
+            {
+	       var count=parseInt(0);
+	      for(var i=0;i< str.length;i=i+1)
+	       {
+		      if(str[i]==' ')
 			   count=count+1;
-	   }
-        return count;	   
-	   
-   }
+	       }
+          return count;	   
+	}
    
-   //.............  ShowError(id,msg)
+   //.............  It will display error message on specified position(based on ids)
          function ShowError(ids,msg)
 		 {
 			  document.getElementById(ids).innerHTML= msg; 
