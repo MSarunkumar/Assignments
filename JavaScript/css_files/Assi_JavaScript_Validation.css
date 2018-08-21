@@ -38,11 +38,11 @@ font-size:22px
 
 .btn{
 	
-	background-color: #73AD21;
+	background-color: #00AD21;
 	opacity: .9;
-	border-radius: 40px;
+	border-radius: 30px;
 	padding: 5px; 
-	border: 2px solid #73AD21;
+	border: 3px solid #73AD21;
 
 }
 
