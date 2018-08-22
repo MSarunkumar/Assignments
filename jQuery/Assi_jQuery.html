@@ -1,120 +1,87 @@
-
 <html>
-
    <head>
-
-            <title>Registration Form</title>  
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-             <script type="text/javascript" src="js_files/Assi_jQuery.js" > </script>
-            
-             <link rel="stylesheet" href="css_files/Assi_jQuery.css">
-   
+      <title>Registration Form</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript" src="js_files/Assi_jQuery.js" > </script>
+      <link rel="stylesheet" href="css_files/Assi_jQuery.css">
    </head>
-
    <!--   We used refresh function for refreshing the capcha.The onload evend use for first load the doc show the captcha.
-   
-    -->
-<body background="Wallpapers/unsplash.jpg"  >
-        
- <header>Registration Form </header>
-
-                
-  
-   <!--  When client submit the form then formValidation() will call and return boolean value based on return value form would be submit 
-   -->
-     <br><br>
- 
-  <form action="#">
-           
-        <div class="Position_color">First Name</div>
-             <input type='text' id='fname' > 
-                 <span class='star' id='fid'> </span>  <br><br>
-         
-        <div class="Position_color">Last Name</div>
-             <input type='text' id="lname"  > 
-                 <span class='star' id="lid">  </span> <br><br>
-   
-        <div class="Position_color">Email</div>
-            <input type='text' id="email" placeholder='abc@mindfiresolutions.com' > 
-                  <span  class='star' id='eid'> </span>  <br><br>
- 
-        <div class="Position_color">Password</div>
-            <input type='Password' id="password" placeholder='Minimum 8 character' > 
-                 <span  class='star' id='pid'> </span> <br><br>
-         
-         
-        <div class="Position_color">Confirm-Password</div>
-            <input type='Password' id="cpassword" placeholder='Minimum 8 character' >
-                 <span class='star' id="cpid"></span><br><br>
-         
- 
-        <div class="Position_color">Gender</div>
-                      <span class='radio_color' >    <input type='radio' name='gender' value='0'>Male
-                                                             <input type='radio' name='gender' value='1'>Female
-                                                             <input type='radio' name='gender' value='2'>Trancegender  
-
-                                                             </span> <span id="gid"></span> <br><br>
- 
-        <div class="Position_color">Phone Number 1</div>
-              <input type='text' id="mob1"  >  <span  class='star' id='mid1'> </span> <br><br>
-          
-        <div class="Position_color">Phone Number 2</div>
-              <input type='text' id="mob2"  > <span id='mid2'> </span> <br><br>
-         
-        <div class="Position_color">Address 1</div>
-              <input type='text' id="addr1"  > <span  class='star' id="aid1"> </span>  <br><br>
-          
-        <div class="Position_color">Address 2</div>
-              <input type='text' id="addr2"  ><span id="aid2"></span><br><br>
- 
-        <div class="Position_color">City</div>
-              <input type='text' id="city" > <span  class='star' id="cid">   </span>  <br><br>
- 
- 
-        <div class="Position_color">State</div>
-             <select  name='state' id="stt" >
-                                                      <option  value ="0">Choose One</option>
-                                                      <option   value='1' >udisha</option>
-                                                      <option   value='2' >up</option>
-                                                      <option   value='3' >mp</option>
-                                                      <option    value='4' >Telengana</option>
-                                                      <option    value='5' >others</option> </select><span class='star'> </span><span id='stid'></span> <br><br>
- 
-        <div class="Position_color">Country</div>
-              <select  name='country' id="ctt" >
-                                                       <option  value ="0">Choose One</option>
-                                                       <option  value ="1">Australia</option>
-                                                       <option  value='2' >india</option>
-                                                       <option  value='3' >americaan</option>
-                                                       <option  value='4' >chine</option>
-                                                       <option  value='5' >others</option></select> <span  class='star' > </span><span id="coid"></span> <br><br>
- 
- 
-        <div class="Position_color">Subscribe News</div>
-              <span class='radio_color' >          <input type='radio' name="subscribe" value="0">Yes
-                                                   <input type='radio' name="subscribe" value="1">No </span>
-                                                   <span  id="sid"></span> 
-                                                   <br><br>
-                 
-
-        <div class="Position_color">I am Not robot.</div>
-        
-        <div class="Position_color">    <i id='num1'>      </i>
-                                        <i id='operand'>   </i>
-                                        <i id='num2'>      </i>
-                  <input type="text" id="User_result" placeholder='Result of captcha' >
-                                        <span id='captcha_id'> </span></div> 
-                            <button id='rid' class='btn'>REFRESH </button>  <br><br>
-
-
+      -->
+   <body background="Wallpapers/unsplash.jpg"  >
+      <header>Registration Form </header>
+      <!--  When client submit the form then formValidation() will call and return boolean value based on return value form would be submit 
+         -->
+      <br><br>
+      <form action="#">
+         <div class="Position_color">First Name</div>
+         <input type='text' id='fname' > 
+         <span class='star' id='fid'> </span>  <br><br>
+         <div class="Position_color">Last Name</div>
+         <input type='text' id="lname"  > 
+         <span class='star' id="lid">  </span> <br><br>
+         <div class="Position_color">Email</div>
+         <input type='text' id="email" placeholder='abc@mindfiresolutions.com' > 
+         <span  class='star' id='eid'> </span>  <br><br>
+         <div class="Position_color">Password</div>
+         <input type='Password' id="password" placeholder='Minimum 8 character' > 
+         <span  class='star' id='pid'> </span> <br><br>
+         <div class="Position_color">Confirm-Password</div>
+         <input type='Password' id="cpassword" placeholder='Minimum 8 character' >
+         <span class='star' id="cpid"></span><br><br>
+         <div class="Position_color">Gender</div>
+         <span class='radio_color' >    <input type='radio' name='gender' value='0'>Male
+         <input type='radio' name='gender' value='1'>Female
+         <input type='radio' name='gender' value='2'>Trancegender  
+         </span> <span id="gid"></span> <br><br>
+         <div class="Position_color">Phone Number 1</div>
+         <input type='text' id="mob1"  >  <span  class='star' id='mid1'> </span> <br><br>
+         <div class="Position_color">Phone Number 2</div>
+         <input type='text' id="mob2"  > <span id='mid2'> </span> <br><br>
+         <div class="Position_color">Address 1</div>
+         <input type='text' id="addr1"  > <span  class='star' id="aid1"> </span>  <br><br>
+         <div class="Position_color">Address 2</div>
+         <input type='text' id="addr2"  ><span id="aid2"></span><br><br>
+         <div class="Position_color">City</div>
+         <input type='text' id="city" > <span  class='star' id="cid">   </span>  <br><br>
+         <div class="Position_color">State</div>
+         <select  name='state' id="stt" >
+            <option  value ="0">Choose One</option>
+            <option   value='1' >udisha</option>
+            <option   value='2' >up</option>
+            <option   value='3' >mp</option>
+            <option    value='4' >Telengana</option>
+            <option    value='5' >others</option>
+         </select>
+         <span class='star'> </span><span id='stid'></span> <br><br>
+         <div class="Position_color">Country</div>
+         <select  name='country' id="ctt" >
+            <option  value ="0">Choose One</option>
+            <option  value ="1">Australia</option>
+            <option  value='2' >india</option>
+            <option  value='3' >americaan</option>
+            <option  value='4' >chine</option>
+            <option  value='5' >others</option>
+         </select>
+         <span  class='star' > </span><span id="coid"></span> <br><br>
+         <div class="Position_color">Subscribe News</div>
+         <span class='radio_color' >          <input type='radio' name="subscribe" value="0">Yes
+         <input type='radio' name="subscribe" value="1">No </span>
+         <span  id="sid"></span> 
+         <br><br>
+         <div class="Position_color">I am Not robot.</div>
+         <div class="Position_color">    <i id='num1'>      </i>
+            <i id='operand'>   </i>
+            <i id='num2'>      </i>
+            <input type="text" id="User_result" placeholder='Result of captcha' >
+            <span id='captcha_id'> </span>
+         </div>
+         <button id='rid' class='btn'>REFRESH </button>  <br><br>
          <div style="margin-left:500px;">
-          <button type='reset' value='reset' class='btn' >RESET</button>
-          <button type='submit' value='submit' id='subid' class='btn'>SUBMIT</button>  
-          <p style="color:red;margin-left:300px"> *[Mandatory] </p> </div>
-                 
-        
-        </form>   
-
-    </body>
-    <footer>This is footer. [About us, copy right etc.. area] </footer>
+            <button type='reset' value='reset' class='btn' >RESET</button>
+            <button type='submit' value='submit' id='subid' class='btn'>SUBMIT</button>  
+            <p style="color:red;margin-left:300px"> *[Mandatory] </p>
+         </div>
+      </form>
+   </body>
+   <footer>This is footer. [About us, copy right etc.. area] </footer>
 </html>
