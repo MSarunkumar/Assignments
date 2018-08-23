@@ -1,12 +1,27 @@
 <!doctype html>
 <html>
-   <head>  </head>
-   <body background="Wallpapers/beach.jpg">
-      <header>
-         <center ><font size=6>  User Registration Form </font></center>
+   <head> <title>Online rewards application form</title> </head>
+   <body style="background-color: #999">
+      
+
+
+
+
+      <header >
+           <img src="logos/banner.png" width="1332px" height="150px">
       </header>
+      <br>
+     <img   src="logos/fb_logo.png" width="50px" height="50px" >
+   
+           
+            
+
+
+       <br><br><br>
       <form  name="User_Registration" >
+
          <table cellpadding="5" width="45%"  align="center" cellspacing="5">
+          <caption> <font size=6> User Registration Form </font></caption>
             <tr>
                <td>First Name</td>
                <td><input type= 'text' name='ftextnames'  size="30"></td>
@@ -58,30 +73,29 @@
             <tr>
                <td>Interests</td>
                <td>
-                  <select name="INTERESTS">
-                     <option value="sp">sports</option>
-                     <option value="bo">books</option>
-                     <option value="com">computer </option>
-                     <option value="so">software</option>
-                     <option value="Goa">fashion</option>
-                     <option value="Ph">photography</option>
-                     <option value="-1" selected>select...</option>
-                     <option value="ot">others</option>
-                  </select>
+                       <input type="checkbox" name="Interests" value="sp">sports
+                       <input type="checkbox" name="Interests" value="ph">photography 
+                       <input type="checkbox" name="Interests" value="fa">fashion<br> 
+                       <input type="checkbox" name="Interests" value="co">computer
+                       <input type="checkbox" name="Interests" value="so">software
+                       <input type="checkbox" name="Interests" value="bo">books
+                       <input type="checkbox" name="Interests" value="Ot">Others 
+                     
+                    
                </td>
             </tr>
             <tr>
                <td>City</td>
                <td>
                   <select name="City">
-                     <option value="-1" selected>select...</option>
+                     <option value="1" selected>CHOOSE ONE</option>
                      <option value="BH">BHUBANESWAR</option>
                      <option value="No">NOIDA</option>
                      <option value="Ne">NEW DELHI</option>
                      <option value="Mu">MUMBAI</option>
                      <option value="Go">GOA</option>
                      <option value="Pa">PATNA</option>
-                     <option value="ot">others</option>
+                     <option value="Ot">OTHERS</option>
                   </select>
                </td>
             </tr>
@@ -89,12 +103,12 @@
                <td>District</td>
                <td>
                   <select name="District">
-                     <option value="-1" selected>select..</option>
+                     <option value="1" selected>CHOOSE ONE</option>
                      <option value="ET">ETAH</option>
                      <option value="WR">WARANGAL</option>
                      <option value="AG">AGRA</option>
                      <option value="PT">PATNA</option>
-                     <option value="ot">others</option>
+                     <option value="Ot">OTHERS</option>
                   </select>
                </td>
             </tr>
@@ -102,13 +116,13 @@
                <td>State</td>
                <td>
                   <select Name="State">
-                     <option value="-1" selected>select..</option>
+                     <option value="1" selected>CHOOSE ONE</option>
                      <option value="UP">UP</option>
-                     <option value="UD">UDISHA</option>
+                     <option value="OD">ODISHA</option>
                      <option value="Ne">NEW DELHI</option>
                      <option value="Mu">MUMBAI</option>
                      <option value="Go">GOA</option>
-                     <option value="ot">others</option>
+                     <option value="Ot">OTHERS</option>
                   </select>
                </td>
             </tr>
@@ -116,10 +130,10 @@
                <td>ZipCode</td>
                <td><input type="text" name="pincode" id="pincode" size="30"></td>
             <tr>
-               <td colspan="2"><input type="submit" value="Submit User Registration Form" /></td>
+               <td colspan="2"><input type="submit" value="Submit application form" /></td>
             </tr>
          </table>
       </form>
-      <footer >This is Footer.   Copy rights  </footer>
+      <footer  style="background-color: lightblue;font-size: 35px">This is Footer Area.  </footer>
    </body>
 </html>
