@@ -1,75 +1,80 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title> Form</title>
-      <link rel="stylesheet" href="css_files/Assi_css_external.css">
-   </head>
-   <body id="body" style="background-image: url(Wallpapers/beach.jpg)">
-      <header>
-         <h2> Registration Form </h2>
-      </header>
-      <form action="#">
-         <div class='ss'>First Name</div>
-         <input type='text'  size="30" class='required' >
-         <span class='star'> </span>  <br><br>
-         <div class='ss'>Last Name</div>
-         <input type='text' size="30" class="required">
-         <span  class='star'>  </span> <br><br>
-         <div class='ss'>Email</div>
-         <input type='text' size="30"  placeholder='   abc@mindfire.com'  class="required">  
-         <span class='star'> </span>  <br><br>
-         <div class='ss'>Password</div>
-         <input type='Password'  size="30" placeholder='    Minimum 8 character' class="required">
-         <span  class='star'> </span> <br><br>
-         <div class='ss'>Confirm-Password</div>
-         <input type='Password' size="30"  placeholder='   Minimum 8 character' class="required">
-         <span  class='star'> </span>  <br><br>
-         <div class='ss'>Gender</div>
-         <span > <input type='radio' name='gender' value='0'>Male
-         <input type='radio' name='gender' value='1' >Female
-         <input type='radio' name='gender' value='2'>Trancegender
-         </span><br><br>
-         <div class='ss'>Phone Number 1</div>
-         <input type='text' size="30"  name='mob1' class="required">  
-         <span  class='star'> </span>  <br><br>
-         <div class='ss'>Phone Number 2</div>
-         <input type='text' size="30"  name='mob2'><br><br>
-         <div class='ss'>Address 1</div>
-         <textarea name="Address1"  size="30"  class="required">   </textarea>
-         <span  class='star'>  </span> <br><br>
-         <div class='ss'>Address 2</div>
-         <textarea name="Address2" size="30"  > </textarea>
-         <br><br>
-         <div class='ss'>City</div>
-         <input type='text'   size="30" name='city'  class="required" >
-         <span  class='star'>   </span> <br><br>
-         <div class='ss'>State</div>
-         <select  name='State'   class="required">
-            <option  >Choose One</option>
-            <option value='ud' >udisha</option>
-            <option value='up' >up</option>
-            <option value='mp' >mp</option>
+
+<head>
+    <title> Form</title>
+    <link rel="stylesheet" href="css_files/Assi_css_external.css">
+</head>
+<header>
+
+</header>
+
+<body id="body">
+
+    <form action="#" id="form" method="get">
+        <h2> Registration Form </h2>
+        <div class='ss'>First Name</div>
+        <input type='text' size="30" class='required'>
+        <span class='star'> </span> <br><br>
+        <div class='ss'>Last Name</div>
+        <input type='text' size="30" class="required">
+        <span class='star'> </span> <br><br>
+        <div class='ss'>Email</div>
+        <input type='text' size="30" placeholder='   abc@mindfire.com' class="required">
+        <span class='star'> </span> <br><br>
+        <div class='ss'>Password</div>
+        <input type='Password' size="30" placeholder='    Minimum 8 character' class="required">
+        <span class='star'> </span> <br><br>
+        <div class='ss'>Confirm-Password</div>
+        <input type='Password' size="30" placeholder='   Minimum 8 character' class="required">
+        <span class='star'> </span> <br><br>
+        <div class='ss'>Gender</div>
+        <span> <input type='radio' name='gender' value='0'>Male
+            <input type='radio' name='gender' value='1'>Female
+            <input type='radio' name='gender' value='2'>Transgender
+        </span><br><br>
+        <div class='ss'>Phone Number 1</div>
+        <input type='number' min='9' size="30" name='mob1' class="required">
+        <span class='star'> </span> <br><br>
+        <div class='ss'>Phone Number 2</div>
+        <input type='number' min='9' size="30" name='mob2' class='nrequired'><br><br>
+        <div class='ss'>Address 1</div>
+        <textarea name="Address1" size="30" class="required">   </textarea>
+        <span class='star'> </span> <br><br>
+        <div class='ss'>Address 2</div>
+        <textarea name="Address2" size="30" class='nrequired'> </textarea>
+        <br><br>
+        <div class='ss'>City</div>
+        <input type='text' size="30" name='city' class="required">
+        <span class='star'> </span> <br><br>
+        <div class='ss'>State</div>
+        <select name='State' class="required">
+            <option>Choose One</option>
+            <option value='ud'>udisha</option>
+            <option value='up'>up</option>
+            <option value='mp'>mp</option>
             
-            <option value='te' >Telengana</option>
-            <option value='ot' >others</option>
-         </select>
-         <span class='star'> </span>  <br><br>
-         <div class='ss'>Country</div>
-         <select  name='Country'   class="required">
-            <option  >Choose One</option>
-            <option value='in' >india</option>
-            <option value='am' >americaan</option>
-            <option value='ch' >chine</option>
-            <option value='ot' >others</option>
-         </select>
-         <span  class='star'> </span>  <br><br>
-         <div class='ss'>Subscribe News</div>
-         <span > <input type='radio' name="check">Yes
-         <input type='radio' name="check">No</span>  <br><br>
-         <center><button type='submit' value='submit' id="btn" >Submit Form</button></center>
-      </form>
-      <footer>
-         <h2> This is footer. [Copy rights, About us] Area... </h2>
-      </footer>
-   </body>
+            <option value='te'>Telengana</option>
+            <option value='ot'>others</option>
+        </select>
+        <span class='star'> </span> <br><br>
+        <div class='ss'>Country</div>
+        <select name='Country' class="required">
+            <option>Choose One</option>
+            <option value='in'>india</option>
+            <option value='am'>americaan</option>
+            <option value='ch'>chine</option>
+            <option value='ot'>others</option>
+        </select>
+        <span class='star'> </span> <br><br>
+        <div class='ss'>Subscribe News</div>
+        <span> <input type='radio' name="check">Yes
+            <input type='radio' name="check">No</span> <br><br><br><br>
+        <center><button type='submit' value='submit' id="btn">Submit Form</button></center>
+    </form>
+    <footer>
+        <h2> This is footer. [Copy rights, About us] Area... </h2>
+    </footer>
+</body>
+
 </html>
