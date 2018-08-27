@@ -1,70 +1,96 @@
+header, footer {
+    color: blue;
+    background-color: lightblue;
+    height: 45 px;
+    border-radius: 15 px;
+}
+#form {
+    padding: 5 px;
+    margin: 115 px;
+    border: 25 px solid lightblue;
+    border-radius: 25 px;
+}
+input[type = 'text']: focus, input[type = 'password']: focus, input[type = 'number']: focus {
+        border-radius: 25 px;
+        height: 45 px;
+        width: 250 px;
+        border: 2 px solid red;
+        padding: 5 px;
+        margin: 2 px;
+
+    }
 
 
 
-
-.ss{
-
-margin-left:480px;
-width:240px;
-float:left;
-color:green;
-font-style:italic;
-font-size:20px;
-font-family: 'Righteous', cursive;
- text-shadow: 
-    0 .2rem .5rem #fff,
-    0 .2rem .6rem #fff,
-    0 .2rem .7rem #29F294,
-    0 .2rem .8rem #29F294,
-    0 .2rem .9rem #29F294,
-    0 .2rem 1rem #29F294,
-    0 .2rem 2rem #29F294,
-    0 .2rem 3rem #29F294,
-    0 .2rem 4rem #29F294;
+    .ss {
+        margin-left: 350 px;
+        width: 240 px;
+        float: left;
+        color: green;
+        font-style: italic;
+        font-size: 20 px;
+        font-family: 'Righteous', cursive;
+        text-shadow:
+            0 .2 rem .5 rem# fff,
+            0 .2 rem .6 rem# fff,
+            0 .2 rem .7 rem #29F294,
+            0 .2rem .8rem # 29 F294,
+            0 .2 rem .9 rem #29F294,
+            0 .2rem 1rem # 29 F294,
+            0 .2 rem 2 rem #29F294,
+            0 .2rem 3rem # 29 F294,
+            0 .2 rem 4 rem #29F294;
 }
 
 
-.required{
-     border-radius: 25px;
+.required, .nrequired{
+     border-radius: 15px;
+	 height:35px;
+	 width:200px;
+	 border: 2px solid green;
+     padding: 5px;
+     margin: 2px;
 	 
    }
   
 h2{
     color: blue;
     text-align:center;
-    color:blue; 
-	background-color:lightgray;
 }
 
 #btn {
-  width: 140px;
-  height: 45px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-weight: 500;
-  color: #000;
-  background-color: #fff;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-  border-radius: 25px;
-  }
+                width: 140 px;
+                height: 45 px;
+                font-family: 'Roboto',sans-serif;
+                font-size: 11 px;
+                font-weight: 500;
+                color: #000;
+                background-color: # fff;
+                border: none;
+                border-radius: 5 px;
+                box-shadow: 0 px 8 px 15 px rgba(0, 0, 0, 0.1);
+                transition: all 0.3 s ease 0 s;
+                cursor: pointer;
+                outline: none;
+                border-radius: 10 px;
+            }
 
-#btn:hover {
-  background-color: #2EE59D;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-  color: #fff;
-  transform: translateY(-7px);
-}
+        
+        #btn: hover {
+                background-color: #2EE59D;
+                box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+                color: # fff;
+                transform: translateX(30 px);
+                width: 240 px;
+                height: 55 px;
+                font-size: 25 px;
+                border-radius: 15 px;
+            }
 
-.star:after
-  { 
-  	content:"*";
-     color:red;
-
-  	 }
+            .star: after {
+                content: "*";
+                color: red;
+            }
+        input[type = radio] {
+            color: green;
+        }
