@@ -2,60 +2,48 @@
 <html>
    <head>
       <title>Registration Form</title>
-      <script type="text/javascript" src="js_files/Assi_JavaScript_Validation.js" > </script>
+      
       <link rel="stylesheet" href="css_files/Assi_JavaScript_Validation.css">
    </head>
    <!--   We used refresh function for refreshing the capcha.The onload evend use for first load the doc show the captcha.
       -->
-   <body background="Wallpapers/unsplash.jpg"  onload="refresh()">
+   <body     > 
       <header>Registration Form </header>
       <!--  When client submit the form then formValidation() will call and return boolean value based on return value form would be submit 
          -->
       <br><br>
-      <form action="#" onsubmit = "return formValidation()">
+      <form action="#" onsubmit = "return formValidation()" method="get">
          <div class="Position_color">First Name</div>
-         <input type='text' id='fname' onblur="firstNameValid()"> 
+         <input type='text' id='fname' class="input_box" maxlength="15"  onblur="firstNameValid()"> 
          <span class='star' id='fid'> </span>  <br><br>
          <div class="Position_color">Last Name</div>
-         <input type='text' id="lname"  onblur="lastNameValid()"> 
+         <input type='text' id="lname" class="input_box" maxlength="15" onblur="lastNameValid()"> 
          <span class='star' id="lid">  </span> <br><br>
          <div class="Position_color">Email</div>
-         <input type='text' id="email" placeholder='abc@mindfiresolutions.com' onblur="emailValid()"> 
+         <input type='text' id="email" placeholder='abc@mindfiresolutions.com' class="input_box" maxlength="25" onblur="emailValid()"> 
          <span  class='star' id='eid'> </span>  <br><br>
          <div class="Position_color">Password</div>
-         <input type='Password' id="password" placeholder='Minimum 8 character' onblur="passwordValid()"> 
+         <input type='Password' id="password" placeholder='Minimum 8 character' class="input_box" maxlength="16" onblur="passwordValid()"> 
          <span  class='star' id='pid'> </span> <br><br>
          <div class="Position_color">Confirm-Password</div>
-         <input type='Password' id="cpassword" placeholder='Minimum 8 character' onblur="cpasswordValid()">
+         <input type='Password' id="cpassword" placeholder='Minimum 8 character' class="input_box" maxlength="16"max onblur="cpasswordValid()">
          <span class='star' id="cpid"></span><br><br>
          <div class="Position_color">Gender</div>
-         <span class='radio_color' >    <input type='radio' name='gender' value='0'>Male
-         <input type='radio' name='gender' value='1'>Female
-         <input type='radio' name='gender' value='2'>Trancegender  
+         <span class='radio_color' >    <input type='radio' name='gender' onchange='genderValid()' value='0'>Male
+         <input type='radio' name='gender' onchange='genderValid()' value='1'>Female
+         <input type='radio' name='gender' onchange='genderValid()' value='2'>Transgender  
          </span> <span id="gid"></span> <br><br>
          <div class="Position_color">Phone Number 1</div>
-         <input type='text' id="mob1"  onblur="mobile1Valid()">  <span  class='star' id='mid1'> </span> <br><br>
+         <input type='text' id="mob1"  class="input_box" maxlength="10" onblur="mobile1Valid()">  <span  class='star' id='mid1'> </span> <br><br>
          <div class="Position_color">Phone Number 2</div>
-         <input type='text' id="mob2"  onblur="mobile2Valid()"> <span id='mid2'> </span> <br><br>
-         <div class="Position_color">Address 1</div>
-         <input type='text' id="addr1" onblur="address1Valid()" > <span  class='star' id="aid1"> </span>  <br><br>
-         <div class="Position_color">Address 2</div>
-         <input type='text' id="addr2" onblur="address2Valid()" ><span id="aid2"></span><br><br>
-         <div class="Position_color">City</div>
-         <input type='text' id="city" onblur="cityValid()"> <span  class='star' id="cid">   </span>  <br><br>
-         <div class="Position_color">State</div>
-         <select  name='state' id="stt" >
-            <option  value ="0">Choose One</option>
-            <option   value='1' >udisha</option>
-            <option   value='2' >up</option>
-            <option   value='3' >mp</option>
-            <option    value='4' >Telengana</option>
-            <option    value='5' >others</option>
-         </select>
-         <span class='star'> </span><span id='stid'></span> <br><br>
+         <input type='text' id="mob2"  class="input_box" maxlength="10" onblur="mobile2Valid()"> <span id='mid2'> </span> <br><br>
+         <div class="Position_color">Current Address</div>
+         <input type='text' id="addr1" class="input_box" maxlength="35" onblur="address1Valid()" > <span  class='star' id="aid1"> </span>  <br><br>
+         <div class="Position_color">Permanent Address</div>
+         <input type='text' id="addr2" class="input_box" maxlength="35" onblur="address2Valid()" ><span id="aid2"></span><br><br>
          <div class="Position_color">Country</div>
-         <select  name='country' id="ctt" >
-            <option  value ="0">Choose One</option>
+         <select  name='country' id="ctt" onblur="countryValid()" >
+            <option  value ="0" selected>Choose One</option>
             <option  value ="1">Australia</option>
             <option  value='2' >india</option>
             <option  value='3' >americaan</option>
@@ -63,25 +51,58 @@
             <option  value='5' >others</option>
          </select>
          <span  class='star' > </span><span id="coid"></span> <br><br>
+         <div class="Position_color">State</div>
+         <select  name='state' id="stt" onblur="stateValid()">
+            <option  value ="0" selected>Choose One</option>
+            <option   value='1' >Odisha</option>
+            <option   value='2' >up</option>
+            <option   value='3' >mp</option>
+            <option    value='4' >Telengana</option>
+            <option    value='5' >others</option>
+         </select>
+         <span class='star'> </span><span id='stid'></span> <br><br>
+         
+         <div class="Position_color">City</div>
+         <select  name='city' id="citt" onblur="cityValid()" >
+            <option  value ="0" selected>Choose One</option>
+            <option   value='1' >Etah</option>
+            <option   value='2' >Agra</option>
+            <option   value='3' >Mathura</option>
+            <option    value='4' >Warangal</option>
+            <option    value='5' >Others</option>
+         </select>
+         <span class='star'> </span><span id='cid'></span> <br><br>
          <div class="Position_color">Subscribe News</div>
-         <span class='radio_color' >          <input type='radio' name="subscribe" value="0">Yes
-         <input type='radio' name="subscribe" value="1">No </span>
+         <span class='radio_color' >          <input type='radio' name="subscribe" onchange="subscribeValid()" value="0">Yes
+         <input type='radio' name="subscribe" onchange="subscribeValid()"  value="1">No </span>
          <span  id="sid"></span> 
          <br><br>
-         <div class="Position_color">I am Not robot.</div>
+         <div class="Position_color">Interests</div>
+         <div id='checkbox_color'>
+                       <input type="checkbox" name="Interests" value="sp">Sports
+                       <input type="checkbox" name="Interests" value="ph">Photography 
+                       <input type="checkbox" name="Interests" value="fa">Fashion<br> 
+                       <input type="checkbox" name="Interests" value="co">Computer
+                       <input type="checkbox" name="Interests" value="so">Software
+                       <input type="checkbox" name="Interests" value="bo">Books
+                       <input type="checkbox" name="Interests" value="Ot">Others  
+          </div>
+         <br><br>
+         <div class="Position_color">Captcha</div>
          <div class="Position_color">    <i id='num1'>      </i>
             <i id='operand'>   </i>
             <i id='num2'>      </i>
             <input type="text" id="User_result" placeholder='Result of captcha' onblur="captchaValid()">
             <span id='captcha_id'> </span>
          </div>
-         <button onclick="refresh()" class='btn'>Refresh </button>  <br><br>
+         <input type='button' onclick="refresh()" class='btn' value="Refresh">   <br><br>
          <div style="margin-left:500px;">
-            <button type='reset' value='reset' class='btn' >Reset</button>
-            <button type='submit' value='submit' class='btn'>submit</button>  
+            <input  type='Reset' value='Reset' class='btn' >
+            <input  type='Submit' value='Submit' class='btn'> 
             <p style="color:red;margin-left:300px"> *[Mandatory] </p>
          </div>
       </form>
+      <script type="text/javascript" src="js_files/Assi_JavaScript_Validation.js" > </script>
    </body>
    <footer>This is footer. [About us, copy right etc.. area] </footer>
 </html>
