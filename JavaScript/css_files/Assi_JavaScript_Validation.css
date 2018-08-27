@@ -1,70 +1,66 @@
-
-
-
-
-
-header{
- 
-    background-color: #666;
-    padding: 10px;
-    text-align: center;
-    font-size: 25px;
-    color: white;
+header,footer{
+	background-color: #666;
+	padding: 10px;
+	text-align: center;
+	font-size: 25px;
+	color: white;
 }
-footer{
- 
-    background-color: #666;
-    padding: 10px;
-    text-align: center;
-    font-size: 25px;
-    color: white;
-}
-
-
-
-
 
 .Position_color{
- 
-margin-left:500px;
-width:180px;
-float:left;
-color:green;
-font-style: italic;
-font-size:22px
-
+	margin-left:480px;
+	width:200px;
+	float:left;
+	color:green;
+	font-style: italic;
+	font-size:22px
 }
-
-
 .btn{
 	
-	background-color: #00AD21;
-	opacity: .9;
-	border-radius: 30px;
-	padding: 5px; 
-	border: 3px solid #73AD21;
-
+	width:100px;
+	height:35px;
+	border-radius: 10px;
+	padding: 2px;
+	border: 2px solid #73AD21;
 }
-
-.radio_color{
+.radio_color,#checkbox_color{
 	color:green;
-
 }
-
 h2 {
-    color: blue;
-    margin-left:580px; 
-     
+	color: blue;
+	margin-left:580px;
+}
+p {
+	color:red;
+	margin-left:300px;
+}
+.star:after{
+	content:"*";
+	color:red;
+}
+.input_box{
+	
+	border-radius: 9px;
+	width:200px; 
+	height:20px; 
+	padding:10px;
+}
+#ctt,#stt,#citt{
+	border-radius: 10px;
+	width:150px; 
+	height:35px; 
+}
+#User_result{
+	border-radius: 25px;
+	width:100px; 
+	height:15px; 
+    padding:4px;
+   text-shadow:5px 5px 10px red;
 }
 
- p {
-    color:red;
-    margin-left:300px;	
- }
+.star,#cid,#coid,#stid,#gid,#sid{
+    font-style: italic;
+	font-size:18px;
+	color:red;
+}
 
-
-.star:after
-  { 
-  	content:"*";
-     color:red;
-  }
+	
