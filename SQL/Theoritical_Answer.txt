@@ -1,0 +1,41 @@
+
+Explain the TOP clause in the following sql queries?
+    
+  5  a. SELECT TOP(1) * FROM tblEmp 
+  5  b. SELECT TOP(SELECT 3/2) * FROM tblEmp 
+  5  c. SELECT TOP(1) PERCENT * FROM tblEmp
+  5  d. SELECT TOP(1) WITH TIES * FROM tblEmp ORDER BY vcName
+
+
+Solutions: 
+
+5 a. This query will retrieve and display the first tuple from "tbleml" table;
+5 b. Same result because it took integar VALUE (3/2) == (1).
+5 c. Same result , Percent always took ceil value of Percentage value for Ex. percentage value =(total_row * N)/100 where N = parameter in top function 
+                                                                             so N=1, percentage value=.12 ,ceilvalue is 1 suppose if N=50 percentage value=6 
+                                                                             first six tuple will be display;
+5 d. Ties use for duplacates value. Suppose id is 1,1,1,1 in any table and we write query  top(1) with Ties it will display 4 tuple whitch contains 1,1,1,1 ids.                                                                             
+
+
+
+
+
+15. Describe Char, Varchar and NVarChar datatypes with examples. 
+  solutions--->
+
+     char :
+           Fixed-length, non-Unicode string data.1 bytes of memory contains each character maximum char 8000.
+           Example:
+                   create table mytable (column1 char(15));
+                     
+             
+
+
+     varchar:
+          Variable-length, non Unicode string data.1 bytes of memory contains each character maximum char 8000.
+            Example: create table mytable (column1 varchar(18));
+
+      nvarchar:
+          Variable-length, Unicode string data. 2 bytes of memory contains each character maximum char 4000.unicode means (udia,chines,japness language).
+            Example :: 
+                        CREATE TABLE mytable ( Column1 nvarchar(20) );  
