@@ -49,22 +49,11 @@
           }
           //...................................................                                     first name Validation 
           function firstNameValid() {
-              var firstname = document.getElementById("fname").value;
-              if (ValidAlpha(firstname)) {
-                  f_Valid = ShowError("fid", ' Please Enter Alphabets only');
-              } else {
-                  f_Valid = done("fid");
-                  }
-          }
+                  f_Valid= Validname("fid",document.getElementById("fname").value); 
+			}
           //...................................................                                      last name Validation 
           function lastNameValid() {
-              var lastname = document.getElementById("lname").value;
-               if (ValidAlpha(lastname)) {
-                  l_Valid = ShowError("lid", ' Please Enter Alphabets only');
-              } else {
-                  l_Valid = done("lid");
-
-              }
+                  l_Valid= Validname("lid",document.getElementById("lname").value); 
 			}
           //............................................................                             Email Validation 
           function emailValid() {
@@ -134,9 +123,13 @@
               var regmob = /^\d{10}$/;
               if (!regmob.test(mobile1)) {
                   m1_Valid = ShowError("mid1", "   Please Enter only 10 digits");
-              } else {
-
-                  m1_Valid = done("mid1");
+              } 
+			 
+			  else {
+                      if(mobile1 == "0000000000")
+					         m1_Valid = ShowError("mid1", "   Please Enter valid mobile ");
+                      else 
+						     m1_Valid = done("mid1");
               }
           }
           //.......................................................................................    mobile2 Validation
@@ -150,8 +143,10 @@
                   if (!/^\d{10}$/.test(mobile2)) {
                       m2_Valid = ShowError("mid2", "   Please Enter only 10 digits  ");
                   } else {
-
-                      m2_Valid = done("mid2");
+                             if(mobile2 == "0000000000")
+					             m1_Valid = ShowError("mid2", "   Please Enter valid mobile ");
+                              else 
+                                  m2_Valid = done("mid2");
                   }
               } else {
                   m2_Valid = done("mid2");
@@ -257,6 +252,10 @@
               if (numberTwo == 0 && op == '/') {
                   op = '+';
               }
+			  else if(op == '/')
+			  {
+				  numberTwo=1; 
+			  }
               document.getElementById("num1")
                   .innerHTML = numberOne;
               document.getElementById("num2")
@@ -303,15 +302,19 @@
                   .innerHTML = msg;
               return false;
           }
-          //...................  It will Validate,allow Alphabets only
-          function ValidAlpha(input) {
-
+          //...................  It will Validate, Alphabets only
+          function Validname(ids,input) {
+			  
               var regtext = /^[a-zA-Z]+$/g;
-              if (regtext.test(input))
-                  return false;
-              else
-                  return true;
-          }
+			   var name= input.trim();
+              if (!(regtext.test(name))) {
+                  return  ShowError(ids, ' Please Enter Alphabets only');
+				   
+              } else {
+                 return  done(ids);
+				 
+                }
+		       }
 		  //.................................
 		   function checkAdd(vari)
 		   {
@@ -320,7 +323,7 @@
 			   else 
 				   return false;
 		   }
-		   //................................
+		   //...............................
 		   
 		   
 		   
