@@ -253,9 +253,15 @@
                   op = '+';
               }
 			  else if(op == '/')
-			  {
-				  numberTwo=1; 
-			  }
+			  { 
+		         for(var i=numberTwo; i>=1;i=i-1)
+				    {    numberTwo=i;
+         				if(numberOne%numberTwo ==0 && numberOne > numberTwo)
+						{   break; }
+					    else if(numberTwo >= numberOne)
+						   { numberTwo=1;break;}
+					}
+			    }
               document.getElementById("num1")
                   .innerHTML = numberOne;
               document.getElementById("num2")
